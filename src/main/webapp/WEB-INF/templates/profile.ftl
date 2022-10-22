@@ -47,6 +47,27 @@
         overflow-x: auto;
         scrollbar-width: thin;
     }
+    .logout {
+        display: flex;
+        flex-direction: row;
+        margin-left: auto;
+        justify-content: center;
+        align-items: start;
+    }
+    .logoutbtn {
+        background-color: #5237d5;
+        color: white;
+        border: none;
+        cursor: pointer;
+        width: 60px;
+        height: 30px;
+        opacity: 0.9;
+        font-size: 10pt;
+    }
+    .logoutbtn:hover {
+        opacity:1;
+        cursor: pointer;
+    }
     .upload-form {
         width: 198px;
     }
@@ -153,15 +174,23 @@
     </div>
     <div class="user-info">
       <div class="info-key">
-        <p class="label">Email</p>
         <p class="label">First name</p>
         <p class="label">Last name</p>
+        <p class="label">Email</p>
+        <p class="label">Phone</p>
       </div>
       <div class="info-value">
-        <p class="value">${user.email}</p>
         <p class="value">${user.firstName}</p>
         <p class="value">${user.lastName}</p>
+        <p class="value">${user.email}</p>
+        <p class="value">${user.phone}</p>
       </div>
+    </div>
+    <div class="logout">
+      <form action="/logout" method="POST">
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        <button type="submit" class="logoutbtn" value="/admin/panel/halls">Logout</button>
+      </form>
     </div>
   </div>
   <div class="sessions-list">

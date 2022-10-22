@@ -26,6 +26,7 @@ public class SignService {
 		user.setEmail(dto.getEmail());
 		user.setFirstName(dto.getFirstName());
 		user.setLastName(dto.getLastName());
+		user.setPhone(dto.getPhone());
 		user.setPassword(passwordEncoder.encode(dto.getPassword()));
 		user.getRoles().add(UserRole.ROLE_USER);
 		userRepository.save(user);

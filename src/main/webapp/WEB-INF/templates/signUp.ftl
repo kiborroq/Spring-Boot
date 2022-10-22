@@ -67,6 +67,13 @@
     </div>
 
     <div class="field">
+      <label for="phone"><b>Phone</b></label>
+      <input autocomplete="false" type="text" placeholder="Enter Phone" name="phone" id="email" required
+             value="<#if fields["phone"]??>${fields["phone"]}<#else></#if>">
+      <p class="error"><#if errors["phone"]??>${errors["phone"]}<#else></#if></p>
+    </div>
+
+    <div class="field">
       <label for="email"><b>Email</b></label>
       <input autocomplete="false" type="text" placeholder="Enter Email" name="email" id="email" required
              value="<#if fields["email"]??>${fields["email"]}<#else></#if>">

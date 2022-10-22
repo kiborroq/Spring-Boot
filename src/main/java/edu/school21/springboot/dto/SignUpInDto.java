@@ -9,6 +9,8 @@ public class SignUpInDto {
 	String lastName;
 	/** Имя пользователя */
 	String firstName;
+	/** Телефон пользователя */
+	String phone;
 	/** Почта пользователя */
 	String email;
 	/** Пароль */

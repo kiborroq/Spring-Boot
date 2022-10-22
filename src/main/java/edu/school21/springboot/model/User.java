@@ -32,6 +32,7 @@ public class User extends AbstractModel {
 
 	public static final int NAME_LENGTH = 127;
 	public static final int EMAIL_LENGTH = 320;
+	public static final int PHONE_LENGTH = 15;
 
 	/** Фамилия пользователя */
 	@Column(nullable = false, length = NAME_LENGTH)
@@ -48,6 +49,10 @@ public class User extends AbstractModel {
 	/** Пароль пользователя */
 	@Column(nullable = false)
 	private String password;
+
+	/** Номер телефона пользователя */
+	@Column(nullable = false, length = PHONE_LENGTH)
+	private String phone;
 
 	/** Аватары */
 	@OrderBy("dateTimeCreate DESC")

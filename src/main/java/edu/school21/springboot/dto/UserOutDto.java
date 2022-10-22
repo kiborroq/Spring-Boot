@@ -18,6 +18,8 @@ public class UserOutDto {
 	String lastName;
 	/** Имя пользователя */
 	String firstName;
+	/** Телефон пользователя */
+	String phone;
 	/** Почта пользователя */
 	String email;
 	/** Аватары */
@@ -29,6 +31,7 @@ public class UserOutDto {
 		this.id = user.getId();
 		this.lastName = user.getLastName();
 		this.firstName = user.getFirstName();
+		this.phone = user.getPhone();
 		this.email = user.getEmail();
 		this.avatars = user.getAvatars().stream().map(AvatarDto::new).collect(Collectors.toList());
 		this.sessions = user.getSessions().stream().map(SessionDto::new).collect(Collectors.toList());
