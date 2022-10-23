@@ -52,18 +52,29 @@
         color: #c41515;
         text-align: center;
     }
+    .info {
+        margin: 0;
+        font-size: 14pt;
+        color: #17a342;
+        text-align: center;
+    }
 </style>
 <body>
 <form action="/signIn" method="post">
   <div class="container">
     <h1 style="text-align: center" lang="En"><@spring.message "label.validation.common.authentication"/></h1>
     <p class="error">
-        <#if RequestParameters.formError??>
-          <@spring.message "error.validation.signIn.email"/>
-        <#elseif RequestParameters.sessionError??>
-            <@spring.message "error.validation.signIn.common"/>
+        <#if RequestParameters.emailPasswordError??>
+            <@spring.message "error.signIn.email"/>
+        <#elseif RequestParameters.confirmedError??>
+            <@spring.message "error.signIn.confirm"/>
         <#elseif RequestParameters.error??>
           RequestParameters.error
+        </#if>
+    </p>
+    <p class="info">
+        <#if RequestParameters.confirmEmail??>
+            <@spring.message "info.signIn.confirm"/>
         </#if>
     </p>
     <hr>

@@ -10,9 +10,11 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
+import java.util.UUID;
 
 /** Controller for sign in and sign up */
 @Controller
@@ -47,7 +49,13 @@ public class SignController {
 		}
 
 		signService.signUp(dto);
-		return "redirect:/signIn";
+		return "redirect:/signIn?confirmEmail";
+	}
+
+	@GetMapping("/confirm/{token}")
+	public String confirm(@PathVariable("token") UUID token) {
+		signService.confirm(token);
+		return "/signIn";
 	}
 
 }

@@ -5,40 +5,37 @@
   <title>Error</title>
 </head>
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        vertical-align: baseline;
-        box-sizing: border-box;
-        color: inherit;
+
+    html {
+        height: 100%;
+        width: 80%;
+        display: table;
+        margin: auto;
     }
 
     body {
+        display: table-cell;
+        vertical-align: middle;
         background-color: #5237d5;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
     }
 
     h1 {
-        font-size: 20vw;
+        font-size: 150pt;
         text-align: center;
-        width: 100vw;
         color: white;
         font-family: "Montserrat", monospace;
+        margin: 0;
     }
 
     p {
-        font-size: 5vw;
+        margin: 0;
+        font-size: 20pt;
         text-align: center;
-        width: 100vw;
         color: white;
         font-family: "Montserrat", monospace;
     }
 </style>
-<body style="height: 100vh">
+<body>
 <h1>${status}</h1>
 <p>${error}</p>
 </body>

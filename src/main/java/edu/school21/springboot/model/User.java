@@ -1,9 +1,11 @@
 package edu.school21.springboot.model;
 
 import edu.school21.springboot.model.type.UserRole;
+import edu.school21.springboot.model.type.UserStatus;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.BatchSize;
+import org.jetbrains.annotations.Nullable;
 
 import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
@@ -23,6 +25,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -53,6 +56,15 @@ public class User extends AbstractModel {
 	/** Номер телефона пользователя */
 	@Column(nullable = false, length = PHONE_LENGTH)
 	private String phone;
+
+	/** Статус пользователя */
+	@Column(nullable = false, length = UserStatus.LENGTH)
+	@Enumerated(EnumType.STRING)
+	private UserStatus status;
+
+	/** Токен для подтверждения. Для администраторов null */
+	@Nullable
+	private UUID confirmToken;
 
 	/** Аватары */
 	@OrderBy("dateTimeCreate DESC")

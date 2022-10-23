@@ -2,6 +2,7 @@ package edu.school21.springboot.config;
 
 import edu.school21.springboot.model.type.UserRole;
 import edu.school21.springboot.repository.UserRepository;
+import edu.school21.springboot.security.CustomAuthenticationFailureHandler;
 import edu.school21.springboot.security.CustomAuthenticationSuccessHandler;
 import edu.school21.springboot.security.CustomUserDetailsService;
 import edu.school21.springboot.support.TransactionalHelper;
@@ -42,13 +43,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 					.and()
 				.authorizeRequests()
 					.antMatchers("/admin/**").hasAuthority(UserRole.ROLE_ADMIN.name())
-					.antMatchers("/favicon.ico", "/signUp", "/signIn", "/logout").permitAll()
+					.antMatchers("/favicon.ico", "/signUp", "/signIn", "/logout", "/confirm/**").permitAll()
 					.anyRequest().authenticated()
 					.and()
 				.formLogin()
 					.loginPage("/signIn") // GET
 					.loginProcessingUrl("/signIn") // POST
-					.failureUrl("/signIn?formError")
+					.failureHandler(new CustomAuthenticationFailureHandler())
 					.successHandler(new CustomAuthenticationSuccessHandler(userRepository, transactionalHelper))
 					.usernameParameter("email")
 					.passwordParameter("password") // Дефолтное название параметра в html форме, но указан явно

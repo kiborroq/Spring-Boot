@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
 
-@ControllerAdvice
+@ControllerAdvice(basePackages = "edu.school21.springboot")
 public class GlobalExceptionHandler {
 
 	@Autowired
@@ -32,9 +32,9 @@ public class GlobalExceptionHandler {
 		} else if (ex instanceof IllegalArgumentException
 				|| ex instanceof MethodArgumentNotValidException
 				|| ex instanceof ConstraintViolationException) {
-			message = messageSource.getMessage("error.validation.signIn.data", null, LocaleContextHolder.getLocale());
+			message = messageSource.getMessage("error.common.input-data", null, LocaleContextHolder.getLocale());
 		} else {
-			message = messageSource.getMessage("error.validation.signIn.common", null, LocaleContextHolder.getLocale());
+			message = messageSource.getMessage("error.common.server", null, LocaleContextHolder.getLocale());
 		}
 
 		String refererUri = request.getHeader(HttpHeaders.REFERER).replaceFirst(request.getHeader(HttpHeaders.ORIGIN), "");
