@@ -4,10 +4,8 @@ import edu.school21.springboot.verification.ValidPassword;
 import lombok.Builder;
 import lombok.Value;
 
-import javax.validation.constraints.Email;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
-import javax.validation.ConstraintValidator;
 
 @Builder
 @Value
