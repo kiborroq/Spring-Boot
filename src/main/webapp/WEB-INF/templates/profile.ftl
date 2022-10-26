@@ -181,15 +181,15 @@
         <input id="inputFile" style="display: none" type="file" name="image" onchange="inputImage(event)" accept="image/*">
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
-        <input id="uploadbtn" type="submit" class="uploadbtn" value="<@spring.message "upload"/> disabled>
+        <input id="uploadbtn" type="submit" class="uploadbtn" value="<@spring.message "upload"/>" disabled>
       </form>
     </div>
     <div class="user-info">
       <div class="info-key">
         <p class="label"><@spring.message "firstName"/></p>
-        <p class="label">Last name</p>
-        <p class="label">Email</p>
-        <p class="label">Phone</p>
+        <p class="label"><@spring.message "lastName"/></p>
+        <p class="label"><@spring.message "email"/></p>
+        <p class="label"><@spring.message "phone"/></p>
       </div>
       <div class="info-value">
         <p class="value">${user.firstName}</p>
@@ -201,18 +201,18 @@
     <div class="logout">
       <form action="/logout" method="POST">
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-        <button type="submit" class="logoutbtn" value="/admin/panel/halls">Logout</button>
+        <button type="submit" class="logoutbtn" value="/admin/panel/halls"><@spring.message "logout"/></button>
       </form>
     </div>
   </div>
   <div class="sessions-list">
-    <p class="table-label">Sessions</p>
+    <p class="table-label"><@spring.message "sessions"/></p>
     <hr>
     <div class="table">
       <table>
         <tr>
-          <th>Date</th>
-          <th>IP</th>
+          <th><@spring.message "date"/></th>
+          <th><@spring.message "ip"/></th>
         </tr>
           <#list user.sessions as s>
             <tr>
@@ -224,14 +224,14 @@
     </div>
   </div>
   <div class="images-list">
-    <p class="table-label">Images</p>
+    <p class="table-label"><@spring.message "images"/></p>
     <hr>
     <div class="table">
       <table>
         <tr>
-          <th>File name</th>
-          <th>Size</th>
-          <th>MIME</th>
+          <th><@spring.message "fileName"/></th>
+          <th><@spring.message "size"/></th>
+          <th><@spring.message "mime"/></th>
         </tr>
           <#list user.avatars as a>
             <tr>
