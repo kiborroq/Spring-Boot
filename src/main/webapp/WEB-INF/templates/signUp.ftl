@@ -1,11 +1,8 @@
 <#import "/spring.ftl" as spring />
-
 <html>
 <head>
   <title>SignUp</title>
 </head>
-<#global errors = model["errors"]>
-<#global fields = model["fields"]>
 <style>
     form {width: 400px; margin: auto}
     input[type=text], input[type=password] {
@@ -46,6 +43,7 @@
         margin: 2px 0 0;
         font-size: 10pt;
         color: #c41515;
+        font-weight: 100;
     }
 </style>
 <body>
@@ -56,37 +54,51 @@
 
     <div class="field">
       <label for="firstName"><b><@spring.message "firstName"/></b></label>
-      <input autocomplete="false" type="text" placeholder="<@spring.message "enterFirstName"/>" name="firstName" id="firstName" required
-             value="<#if fields["firstName"]??>${fields["firstName"]}<#else></#if>">
-      <p class="error"><#if errors["firstName"]??>${errors["firstName"]}<#else></#if></p>
+      <input autocomplete="false" type="text" placeholder="<@spring.message "enterFirstName"/>" name="firstName" id="firstName"
+             value="<#if user?? && user.firstName??>${user.firstName}<#else></#if>">
+      <p class="error">
+          <@spring.bind "user.firstName"/>
+          <@spring.showErrors "" ""/>
+      </p>
     </div>
 
     <div class="field">
       <label for="lastName"><b><@spring.message "lastName"/></b></label>
-      <input autocomplete="false" type="text" placeholder="<@spring.message "enterLastName"/>" name="lastName" id="lastName" required
-             value="<#if fields["lastName"]??>${fields["lastName"]}<#else></#if>">
-      <p class="error"><#if errors["lastName"]??>${errors["lastName"]}<#else></#if></p>
+      <input autocomplete="false" type="text" placeholder="<@spring.message "enterLastName"/>" name="lastName" id="lastName"
+             value="<#if user?? && user.lastName??>${user.lastName}<#else></#if>">
+      <p class="error">
+          <@spring.bind "user.lastName"/>
+          <@spring.showErrors "" ""/>
+      </p>
     </div>
 
     <div class="field">
       <label for="phone"><b><@spring.message "phone"/></b></label>
-      <input autocomplete="false" type="text" placeholder="<@spring.message "enterPhone"/>" name="phone" id="email" required
-             value="<#if fields["phone"]??>${fields["phone"]}<#else></#if>">
-      <p class="error"><#if errors["phone"]??>${errors["phone"]}<#else></#if></p>
+      <input autocomplete="false" type="text" placeholder="<@spring.message "enterPhone"/>" name="phone" id="email"
+             value="<#if user?? && user.phone??>${user.phone}<#else></#if>">
+      <p class="error">
+          <@spring.bind "user.phone"/>
+          <@spring.showErrors "" ""/>
+      </p>
     </div>
 
     <div class="field">
       <label for="email"><b><@spring.message "email"/></b></label>
-      <input autocomplete="false" type="text" placeholder="<@spring.message "enterEmail"/>" name="email" id="email" required
-             value="<#if fields["email"]??>${fields["email"]}<#else></#if>">
-      <p class="error"><#if errors["email"]??>${errors["email"]}<#else></#if></p>
+      <input autocomplete="false" type="text" placeholder="<@spring.message "enterEmail"/>" name="email" id="email"
+             value="<#if user?? && user.email??>${user.email}<#else></#if>">
+      <p class="error">
+          <@spring.bind "user.email"/>
+          <@spring.showErrors "" ""/>
+      </p>
     </div>
 
     <div class="field">
       <label for="password"><b><@spring.message "password"/></b></label>
-      <input autocomplete="false" type="password" placeholder="<@spring.message "enterPassword"/>" name="password" id="password" required
-             value="<#if fields["password"]??>${fields["password"]}<#else></#if>">
-      <p class="error"><#if errors["password"]??>${errors["password"]}<#else></#if></p>
+      <input autocomplete="false" type="password" placeholder="<@spring.message "enterPassword"/>" name="password" id="password" value="">
+      <p class="error">
+          <@spring.bind "user.password"/>
+          <@spring.showErrors "" ""/>
+      </p>
     </div>
 
     <button type="submit" class="registerbtn" value="/sighUp"><@spring.message "register"/></button>
