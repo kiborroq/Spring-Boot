@@ -16,7 +16,7 @@
     }
 </script>
 <head>
-  <title>Profile</title>
+  <title><@spring.message "profile"/></title>
 </head>
 <style>
     body {
@@ -181,7 +181,7 @@
         <input id="inputFile" style="display: none" type="file" name="image" onchange="inputImage(event)" accept="image/*">
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
-        <input id="uploadbtn" type="submit" class="uploadbtn" value="Upload" disabled>
+        <input id="uploadbtn" type="submit" class="uploadbtn" value="<@spring.message "upload"/> disabled>
       </form>
     </div>
     <div class="user-info">
