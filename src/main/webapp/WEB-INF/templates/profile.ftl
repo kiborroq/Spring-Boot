@@ -1,3 +1,5 @@
+<#import "/spring.ftl" as spring />
+
 <!DOCTYPE html>
 <html>
 <#global user=model["user"]>
@@ -184,7 +186,7 @@
     </div>
     <div class="user-info">
       <div class="info-key">
-        <p class="label">First name</p>
+        <p class="label"><@spring.message "firstName"/></p>
         <p class="label">Last name</p>
         <p class="label">Email</p>
         <p class="label">Phone</p>

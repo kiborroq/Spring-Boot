@@ -1,3 +1,6 @@
+<#import "/spring.ftl" as spring />
+
+
 <html>
 <head>
   <title>SignIn</title>
@@ -53,7 +56,7 @@
 <body>
 <form action="/signIn" method="post">
   <div class="container">
-    <h1 style="text-align: center">Authentication</h1>
+    <h1 style="text-align: center" lang="En"><@spring.message "authentication"/></h1>
     <p class="error">
         <#if RequestParameters.formError??>
           Email or password incorrect
@@ -65,24 +68,33 @@
     </p>
     <hr>
 
-    <label for="email"><b>Email</b></label>
-    <input autocomplete="false" type="text" placeholder="Enter Email" name="email" id="email" required/>
+    <label for="email"><b><@spring.message "email"/></b></label>
+    <input autocomplete="false" type="text" placeholder="<@spring.message "enterEmail"/>" name="email" id="email" required/>
 
-    <label for="password"><b>Password</b></label>
-    <input autocomplete="false" type="password" placeholder="Enter Password" name="password" id="password" required>
+    <label for="password"><b><@spring.message "password"/></b></label>
+    <input autocomplete="false" type="password" placeholder="<@spring.message "enterPassword"/>" name="password" id="password" required>
 
     <div style="display: flex; align-items: center; width: 100%; margin-bottom: 20px">
       <input autocomplete="false" type="checkbox" name="remember-me" id="remember-me">
-      <label for="remember-me" class="remember-me-label"><b>Remember me</b></label>
+      <label for="remember-me" class="remember-me-label"><b><@spring.message "RememberMe"/></b></label>
     </div>
 
-    <button type="submit" class="loginbtn" value="submit">Login</button>
+    <button type="submit" class="loginbtn" value="submit"><@spring.message "logIn"/></button>
 
     <div style="display: flex; justify-content: center; align-items: center; margin-top: 5px">
-      <a href="/signUp">Don't have account</a>
+      <a href="/signUp"><@spring.message "noAccount"/></a>
     </div>
 
   </div>
 </form>
 </body>
+<footer>
+  <div style="display: flex; justify-content: center; align-items: center; margin-top: 5px">
+    <ul>
+    <a href="/signIn"> </a>
+    <li><a href="/signIn?lang=en"> English </a></li>
+    <li><a href="/signIn?lang=ru"> Русский </a></li>
+    </ul>
+  </div>
+</footer>
 </html>
