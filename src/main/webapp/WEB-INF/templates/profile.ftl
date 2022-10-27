@@ -16,7 +16,7 @@
     }
 </script>
 <head>
-  <title><@spring.message "profile"/></title>
+  <title><@spring.message "label.validation.profilePage.profile"/></title>
 </head>
 <style>
     body {
@@ -181,15 +181,15 @@
         <input id="inputFile" style="display: none" type="file" name="image" onchange="inputImage(event)" accept="image/*">
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
-        <input id="uploadbtn" type="submit" class="uploadbtn" value="<@spring.message "upload"/>" disabled>
+        <input id="uploadbtn" type="submit" class="uploadbtn" value="<@spring.message "label.validation.profilePage.upload"/>" disabled>
       </form>
     </div>
     <div class="user-info">
       <div class="info-key">
-        <p class="label"><@spring.message "firstName"/></p>
-        <p class="label"><@spring.message "lastName"/></p>
-        <p class="label"><@spring.message "email"/></p>
-        <p class="label"><@spring.message "phone"/></p>
+        <p class="label"><@spring.message "label.validation.common.firstName"/></p>
+        <p class="label"><@spring.message "label.validation.common.lastName"/></p>
+        <p class="label"><@spring.message "label.validation.common.email"/></p>
+        <p class="label"><@spring.message "label.validation.signUp.phone"/></p>
       </div>
       <div class="info-value">
         <p class="value">${user.firstName}</p>
@@ -201,18 +201,18 @@
     <div class="logout">
       <form action="/logout" method="POST">
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-        <button type="submit" class="logoutbtn" value="/admin/panel/halls"><@spring.message "logout"/></button>
+        <button type="submit" class="logoutbtn" value="/admin/panel/halls"><@spring.message "label.validation.common.logout"/></button>
       </form>
     </div>
   </div>
   <div class="sessions-list">
-    <p class="table-label"><@spring.message "sessions"/></p>
+    <p class="table-label"><@spring.message "label.validation.profilePage.sessions"/></p>
     <hr>
     <div class="table">
       <table>
         <tr>
-          <th><@spring.message "date"/></th>
-          <th><@spring.message "ip"/></th>
+          <th><@spring.message "label.validation.profilePage.date"/></th>
+          <th><@spring.message "label.validation.profilePage.ip"/></th>
         </tr>
           <#list user.sessions as s>
             <tr>
@@ -224,14 +224,14 @@
     </div>
   </div>
   <div class="images-list">
-    <p class="table-label"><@spring.message "images"/></p>
+    <p class="table-label"><@spring.message "label.validation.profilePage.images"/></p>
     <hr>
     <div class="table">
       <table>
         <tr>
-          <th><@spring.message "fileName"/></th>
-          <th><@spring.message "size"/></th>
-          <th><@spring.message "mime"/></th>
+          <th><@spring.message "label.validation.profilePage.fileName"/></th>
+          <th><@spring.message "label.validation.profilePage.size"/></th>
+          <th><@spring.message "label.validation.profilePage.mime"/></th>
         </tr>
           <#list user.avatars as a>
             <tr>
@@ -245,4 +245,13 @@
   </div>
 </div>
 </body>
+<footer>
+  <div style="display: flex; justify-content: down; align-items: center; margin-top: 5px">
+    <ul>
+      <a href="/profile"> </a>
+      <li><a href="/profile?lang=en"> English </a></li>
+      <li><a href="/profile?lang=ru"> Русский </a></li>
+    </ul>
+  </div>
+</footer>
 </html>

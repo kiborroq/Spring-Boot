@@ -56,7 +56,7 @@
 <body>
 <form action="/signIn" method="post">
   <div class="container">
-    <h1 style="text-align: center" lang="En"><@spring.message "authentication"/></h1>
+    <h1 style="text-align: center" lang="En"><@spring.message "label.validation.common.authentication"/></h1>
     <p class="error">
         <#if RequestParameters.formError??>
           Email or password incorrect
@@ -68,21 +68,22 @@
     </p>
     <hr>
 
-    <label for="email"><b><@spring.message "email"/></b></label>
-    <input autocomplete="false" type="text" placeholder="<@spring.message "enterEmail"/>" name="email" id="email" required/>
+    <label for="email"><b><@spring.message "label.validation.common.email"/></b></label>
+    <input autocomplete="false" type="text" placeholder="<@spring.message "label.validation.common.enterEmail"/>" name="email" id="email" required/>
 
-    <label for="password"><b><@spring.message "password"/></b></label>
-    <input autocomplete="false" type="password" placeholder="<@spring.message "enterPassword"/>" name="password" id="password" required>
+    <label for="password"><b><@spring.message "label.validation.common.password"/></b></label>
+    <input autocomplete="false" type="password" placeholder="<@spring.message "label.validation.common.enterPassword"/>" name="password" id="password" required>
 
     <div style="display: flex; align-items: center; width: 100%; margin-bottom: 20px">
       <input autocomplete="false" type="checkbox" name="remember-me" id="remember-me">
-      <label for="remember-me" class="remember-me-label"><b><@spring.message "RememberMe"/></b></label>
+      <label for="remember-me" class="remember-me-label"><b><@spring.message "label.validation.common.RememberMe"/></b></label>
     </div>
 
-    <button type="submit" class="loginbtn" value="submit"><@spring.message "logIn"/></button>
+    <button type="submit" class="loginbtn" value="submit"><@spring.message "label.validation.common.logIn"/></button>
+
 
     <div style="display: flex; justify-content: center; align-items: center; margin-top: 5px">
-      <a href="/signUp"><@spring.message "noAccount"/></a>
+      <a href="/signUp"><@spring.message "label.validation.signIn.noAccount"/></a>
     </div>
 
   </div>

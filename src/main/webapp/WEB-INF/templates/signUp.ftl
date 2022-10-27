@@ -56,7 +56,7 @@
 <body>
 <form action="/signUp" method="post">
   <div class="container">
-    <h1 style="text-align: center"><@spring.message "registration"/></h1>
+    <h1 style="text-align: center"><@spring.message "label.validation.signUp.registration"/></h1>
     <p class="global-error">
         <#if RequestParameters.error??>
             ${RequestParameters.error}
@@ -65,8 +65,8 @@
     <hr>
 
     <div class="field">
-      <label for="firstName"><b><@spring.message "firstName"/></b></label>
-      <input autocomplete="false" type="text" placeholder="<@spring.message "enterFirstName"/>" name="firstName" id="firstName"
+      <label for="firstName"><b><@spring.message "label.validation.common.firstName"/></b></label>
+      <input autocomplete="false" type="text" placeholder="<@spring.message "label.validation.signUp.enterFirstName"/>" name="firstName" id="firstName"
              value="<#if user?? && user.firstName??>${user.firstName}<#else></#if>">
       <p class="error">
           <@spring.bind "user.firstName"/>
@@ -75,8 +75,8 @@
     </div>
 
     <div class="field">
-      <label for="lastName"><b><@spring.message "lastName"/></b></label>
-      <input autocomplete="false" type="text" placeholder="<@spring.message "enterLastName"/>" name="lastName" id="lastName"
+      <label for="lastName"><b><@spring.message "label.validation.common.lastName"/></b></label>
+      <input autocomplete="false" type="text" placeholder="<@spring.message "label.validation.signUp.enterLastName"/>" name="lastName" id="lastName"
              value="<#if user?? && user.lastName??>${user.lastName}<#else></#if>">
       <p class="error">
           <@spring.bind "user.lastName"/>
@@ -85,8 +85,8 @@
     </div>
 
     <div class="field">
-      <label for="phone"><b><@spring.message "phone"/></b></label>
-      <input autocomplete="false" type="text" placeholder="<@spring.message "enterPhone"/>" name="phone" id="email"
+      <label for="phone"><b><@spring.message "label.validation.signUp.phone"/></b></label>
+      <input autocomplete="false" type="text" placeholder="<@spring.message "label.validation.signUp.enterPhone"/>" name="phone" id="email"
              value="<#if user?? && user.phone??>${user.phone}<#else></#if>">
       <p class="error">
           <@spring.bind "user.phone"/>
@@ -95,8 +95,8 @@
     </div>
 
     <div class="field">
-      <label for="email"><b><@spring.message "email"/></b></label>
-      <input autocomplete="false" type="text" placeholder="<@spring.message "enterEmail"/>" name="email" id="email"
+      <label for="email"><b><@spring.message "label.validation.common.email"/></b></label>
+      <input autocomplete="false" type="text" placeholder="<@spring.message "label.validation.common.enterEmail"/>" name="email" id="email"
              value="<#if user?? && user.email??>${user.email}<#else></#if>">
       <p class="error">
           <@spring.bind "user.email"/>
@@ -105,20 +105,29 @@
     </div>
 
     <div class="field">
-      <label for="password"><b><@spring.message "password"/></b></label>
-      <input autocomplete="false" type="password" placeholder="<@spring.message "enterPassword"/>" name="password" id="password" value="">
+      <label for="password"><b><@spring.message "label.validation.common.password"/></b></label>
+      <input autocomplete="false" type="password" placeholder="<@spring.message "label.validation.common.enterPassword"/>" name="password" id="password" value="">
       <p class="error">
           <@spring.bind "user.password"/>
           <@spring.showErrors "" ""/>
       </p>
     </div>
 
-    <button type="submit" class="registerbtn" value="/sighUp"><@spring.message "register"/></button>
+    <button type="submit" class="registerbtn" value="/sighUp"><@spring.message "label.validation.signUp.register"/></button>
 
     <div style="display: flex; justify-content: center; align-items: center; margin-top: 5px">
-      <a href="/signIn"><@spring.message "accountExists"/></a>
+      <a href="/signIn"><@spring.message "label.validation.signUn.accountExists"/></a>
     </div>
   </div>
 </form>
 </body>
+<footer>
+  <div style="display: flex; justify-content: center; align-items: center; margin-top: 5px">
+    <ul>
+      <a href="/signUp"> </a>
+      <li><a href="/signUp?lang=en"> English </a></li>
+      <li><a href="/signUp?lang=ru"> Русский </a></li>
+    </ul>
+  </div>
+</footer>
 </html>
