@@ -27,7 +27,6 @@ public class SignUpInDto {
 	@Pattern(regexp = "[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$", message = "{error.validation.signUp.email}")
 	String email;
 	/** Пароль */
-	@Size(message = "{error.validation.signUp.password}", min = 5, max = 255)
 	@ValidPassword(message = "{error.validation.signUp.password}")
 	String password;
 
