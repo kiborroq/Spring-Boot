@@ -1,5 +1,6 @@
 package edu.school21.springboot.dto;
 
+import edu.school21.springboot.verification.ValidPassword;
 import lombok.Builder;
 import lombok.Value;
 
@@ -27,7 +28,7 @@ public class SignUpInDto {
 	String email;
 	/** Пароль */
 	@Size(message = "{error.validation.signUp.password}", min = 5, max = 255)
-	@Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[A-Za-z\\d]{8,}$", message = "{error.validation.signUp.password2}")
+	@ValidPassword(message = "{error.validation.signUp.password}")
 	String password;
 
 }
