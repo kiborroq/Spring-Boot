@@ -139,8 +139,8 @@
 </body>
 <footer>
   <div style="display: flex; justify-content: center; align-items: center; margin-top: 5px">
-    <a href="/signIn?lang=en" class="langbtn"> <@spring.message "lang.en"/></a>
-    <a href="/signIn?lang=ru" class="langbtn"> <@spring.message "lang.ru"/></a>
+    <a href="/signUp?lang=en" class="langbtn"> <@spring.message "lang.en"/></a>
+    <a href="/signUp?lang=ru" class="langbtn"> <@spring.message "lang.ru"/></a>
   </div>
 </footer>
 </html>

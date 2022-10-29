@@ -263,8 +263,8 @@
 </body>
 <footer>
   <div style="display: flex; justify-content: flex-end; align-items: flex-end; margin-top: 5px">
-    <a href="/signIn?lang=en" class="langbtn"> <@spring.message "lang.en"/></a>
-    <a href="/signIn?lang=ru" class="langbtn"> <@spring.message "lang.ru"/></a>
+    <a href="/profile?lang=en" class="langbtn"> <@spring.message "lang.en"/></a>
+    <a href="/profile?lang=ru" class="langbtn"> <@spring.message "lang.ru"/></a>
   </div>
 </footer>
 </html>
