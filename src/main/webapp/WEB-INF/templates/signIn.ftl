@@ -59,9 +59,9 @@
     <h1 style="text-align: center" lang="En"><@spring.message "label.validation.common.authentication"/></h1>
     <p class="error">
         <#if RequestParameters.formError??>
-          Email or password incorrect
+          <@spring.message "error.validation.signIn.email"/>
         <#elseif RequestParameters.sessionError??>
-          An error has occurred
+            <@spring.message "error.validation.signIn.common"/>
         <#elseif RequestParameters.error??>
           RequestParameters.error
         </#if>
