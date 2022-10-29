@@ -23,8 +23,8 @@ public class SignUpInDto {
 	@Pattern(regexp = "\\+\\d{1,3}\\(\\d{3}\\)\\d{7}$", message = "{error.validation.signUp.phone}")
 	String phone;
 	/** Почта пользователя */
-	@Size(message = "{error.validation.signUp.email}", min = 6, max = 320)
-	@Pattern(regexp = "[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$", message = "{error.validation.signUp.email}")
+//	@Pattern(regexp = "[[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}]{6,320}$", message = "{error.validation.signUp.email}")
+	@Pattern(regexp = "[\\w-\\.]{4,276}+@([\\w-]{1,30}+\\.)+[\\w-]{2,4}", message = "{error.validation.signUp.email}")
 	String email;
 	/** Пароль */
 	@ValidPassword(message = "{error.validation.signUp.password}")
