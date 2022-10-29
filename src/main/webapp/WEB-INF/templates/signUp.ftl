@@ -45,12 +45,30 @@
         color: #c41515;
         font-weight: 100;
     }
+<<<<<<< HEAD
     .global-error {
         width: 100%;
         margin: 0 0 15px;
         font-size: 14pt;
         color: #c41515;
         text-align: center;
+=======
+    .langbtn {
+      background-color: #ddd;
+      color: white;
+      padding: 16px 20px;
+      margin: 8px 0;
+      border: darkblue;
+      cursor: pointer;
+      width: 80px;
+      opacity: 0.9;
+    }
+    .langbtn:hover {
+      opacity:1;
+      cursor: pointer;
+      color: white;
+      background-color: #5237d5;
+>>>>>>> add. Languages for some additional fields added and new view of language choosing
     }
 </style>
 <body>
