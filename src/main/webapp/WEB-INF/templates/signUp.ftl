@@ -116,7 +116,7 @@
     <button type="submit" class="registerbtn" value="/sighUp"><@spring.message "label.validation.signUp.register"/></button>
 
     <div style="display: flex; justify-content: center; align-items: center; margin-top: 5px">
-      <a href="/signIn"><@spring.message "label.validation.signUn.accountExists"/></a>
+      <a href="/signIn"><@spring.message "label.validation.signUp.accountExists"/></a>
     </div>
   </div>
 </form>
