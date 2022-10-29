@@ -163,6 +163,22 @@
     th {
         background-color: #dddddd;
     }
+    .langbtn {
+      background-color: #ddd;
+      color: white;
+      padding: 16px 20px;
+      margin: 8px 0;
+      border: darkblue;
+      cursor: pointer;
+      width: 80px;
+      opacity: 0.9;
+    }
+    .langbtn:hover {
+      opacity:1;
+      cursor: pointer;
+      color: white;
+      background-color: #5237d5;
+    }
 </style>
 <body>
 <div class="container">
@@ -246,12 +262,9 @@
 </div>
 </body>
 <footer>
-  <div style="display: flex; justify-content: down; align-items: center; margin-top: 5px">
-    <ul>
-      <a href="/profile"> </a>
-      <li><a href="/profile?lang=en"> English </a></li>
-      <li><a href="/profile?lang=ru"> Русский </a></li>
-    </ul>
+  <div style="display: flex; justify-content: flex-end; align-items: flex-end; margin-top: 5px">
+    <a href="/signIn?lang=en" class="langbtn"> <@spring.message "lang.en"/></a>
+    <a href="/signIn?lang=ru" class="langbtn"> <@spring.message "lang.ru"/></a>
   </div>
 </footer>
 </html>

@@ -3,7 +3,7 @@
 
 <html>
 <head>
-  <title>SignIn</title>
+  <title><@spring.message "label.validation.common.authentication"/></title>
 </head>
 <style>
     form {width: 400px; margin: auto}
@@ -52,6 +52,22 @@
         color: #c41515;
         text-align: center;
     }
+    .langbtn {
+      background-color: #ddd;
+      color: white;
+      padding: 16px 20px;
+      margin: 8px 0;
+      border: darkblue;
+      cursor: pointer;
+      width: 80px;
+      opacity: 0.9;
+    }
+    .langbtn:hover {
+      opacity:1;
+      cursor: pointer;
+      color: white;
+      background-color: #5237d5;
+    }
 </style>
 <body>
 <form action="/signIn" method="post">
@@ -91,11 +107,8 @@
 </body>
 <footer>
   <div style="display: flex; justify-content: center; align-items: center; margin-top: 5px">
-    <ul>
-    <a href="/signIn"> </a>
-    <li><a href="/signIn?lang=en"> English </a></li>
-    <li><a href="/signIn?lang=ru"> Русский </a></li>
-    </ul>
+      <a href="/signIn?lang=en" class="langbtn"> <@spring.message "lang.en"/></a>
+      <a href="/signIn?lang=ru" class="langbtn"> <@spring.message "lang.ru"/></a>
   </div>
 </footer>
 </html>
