@@ -29,7 +29,7 @@
         background-color: #5237d5;
         color: white;
         padding: 16px 20px;
-        margin: 8px 0;
+        margin: 15px 0;
         border: none;
         cursor: pointer;
         width: 400px;
@@ -51,22 +51,6 @@
         font-size: 14pt;
         color: #c41515;
         text-align: center;
-    }
-    .langbtn {
-      background-color: #ddd;
-      color: white;
-      padding: 16px 20px;
-      margin: 8px 0;
-      border: darkblue;
-      cursor: pointer;
-      width: 80px;
-      opacity: 0.9;
-    }
-    .langbtn:hover {
-      opacity:1;
-      cursor: pointer;
-      color: white;
-      background-color: #5237d5;
     }
 </style>
 <body>
@@ -138,9 +122,9 @@
 </form>
 </body>
 <footer>
-  <div style="display: flex; justify-content: center; align-items: center; margin-top: 5px">
-    <a href="/signUp?lang=en" class="langbtn"> <@spring.message "lang.en"/></a>
-    <a href="/signUp?lang=ru" class="langbtn"> <@spring.message "lang.ru"/></a>
+  <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-top: 25px; margin-bottom: 25px">
+    <a href="/signUp?lang=en" style="margin-right: 15px"> <@spring.message "lang.en"/></a>
+    <a href="/signUp?lang=ru"> <@spring.message "lang.ru"/></a>
   </div>
 </footer>
 </html>
