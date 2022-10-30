@@ -163,22 +163,6 @@
     th {
         background-color: #dddddd;
     }
-    .langbtn {
-      background-color: #ddd;
-      color: white;
-      padding: 16px 20px;
-      margin: 8px 0;
-      border: darkblue;
-      cursor: pointer;
-      width: 80px;
-      opacity: 0.9;
-    }
-    .langbtn:hover {
-      opacity:1;
-      cursor: pointer;
-      color: white;
-      background-color: #5237d5;
-    }
 </style>
 <body>
 <div class="container">
