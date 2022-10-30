@@ -252,9 +252,21 @@
         cursor: pointer;
         background-color: #eeeeee;
     }
+    .global-error {
+        width: 100%;
+        margin: 0 0 15px;
+        font-size: 14pt;
+        color: #c41515;
+        text-align: center;
+    }
 </style>
 <body>
 <div class="container">
+    <p class="global-error">
+        <#if RequestParameters.error??>
+            ${RequestParameters.error}
+        </#if>
+    </p>
     <div style="display: flex; flex-direction: row" class="container-head">
         <a href="/admin/panel/halls" class="container-label">Halls</a>
         <a href="/admin/panel/films" class="container-label">Movies</a>

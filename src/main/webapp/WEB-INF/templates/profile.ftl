@@ -136,7 +136,12 @@
         display: flex;
         flex-direction: column;
     }
+    .table {
+        max-height: 500px;
+        overflow-y: auto;
+    }
     table {
+        width: 100%;
         font-size: 10pt;
         border-collapse: collapse;
     }
@@ -159,6 +164,11 @@
 </style>
 <body>
 <div class="container">
+  <p class="global-error">
+      <#if RequestParameters.error??>
+          ${RequestParameters.error}
+      </#if>
+  </p>
   <div class="avatar-user-info">
     <div class="avatar-info">
       <div id="fileSelect" onclick="triggerInput()" class="image-preview">
@@ -196,36 +206,40 @@
   <div class="sessions-list">
     <p class="table-label">Sessions</p>
     <hr>
-    <table>
-      <tr>
-        <th>Date</th>
-        <th>IP</th>
-      </tr>
-        <#list user.sessions as s>
-          <tr>
-            <td>${s.dateTimeCreate.format('HH:mm dd.MM.yyyy')}</td>
-            <td>${s.ip}</td>
-          </tr>
-        </#list>
-    </table>
+    <div class="table">
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>IP</th>
+        </tr>
+          <#list user.sessions as s>
+            <tr>
+              <td>${s.dateTimeCreate.format('HH:mm dd.MM.yyyy')}</td>
+              <td>${s.ip}</td>
+            </tr>
+          </#list>
+      </table>
+    </div>
   </div>
   <div class="images-list">
     <p class="table-label">Images</p>
     <hr>
-    <table>
-      <tr>
-        <th>File name</th>
-        <th>Size</th>
-        <th>MIME</th>
-      </tr>
-        <#list user.avatars as a>
+    <div class="table">
+      <table>
         <tr>
-          <td><a href="${a.url}">${a.name}</a></td>
-          <td>${a.size}</td>
-          <td>${a.type}</td>
+          <th>File name</th>
+          <th>Size</th>
+          <th>MIME</th>
         </tr>
-        </#list>
-    </table>
+          <#list user.avatars as a>
+            <tr>
+              <td><a href="${a.url}">${a.name}</a></td>
+              <td>${a.size}</td>
+              <td>${a.type}</td>
+            </tr>
+          </#list>
+      </table>
+    </div>
   </div>
 </div>
 </body>

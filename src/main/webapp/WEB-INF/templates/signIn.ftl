@@ -59,6 +59,8 @@
           Email or password incorrect
         <#elseif RequestParameters.sessionError??>
           An error has occurred
+        <#elseif RequestParameters.error??>
+          RequestParameters.error
         </#if>
     </p>
     <hr>

@@ -45,11 +45,23 @@
         font-size: 10pt;
         color: #c41515;
     }
+    .global-error {
+        width: 100%;
+        margin: 0 0 15px;
+        font-size: 14pt;
+        color: #c41515;
+        text-align: center;
+    }
 </style>
 <body>
 <form action="/signUp" method="post">
   <div class="container">
     <h1 style="text-align: center">Registration</h1>
+    <p class="global-error">
+        <#if RequestParameters.error??>
+            ${RequestParameters.error}
+        </#if>
+    </p>
     <hr>
 
     <div class="field">
