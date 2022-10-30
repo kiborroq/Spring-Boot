@@ -1,6 +1,9 @@
 package edu.school21.springboot.exception;
 
 import org.hibernate.exception.ConstraintViolationException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -16,6 +19,9 @@ import java.util.Map;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
+	@Autowired
+	private MessageSource messageSource;
+
 	@ExceptionHandler(Exception.class)
 	public ModelAndView resolveException(Exception ex, HttpServletRequest request, HttpServletResponse response) {
 		ex.printStackTrace();
@@ -26,9 +32,9 @@ public class GlobalExceptionHandler {
 		} else if (ex instanceof IllegalArgumentException
 				|| ex instanceof MethodArgumentNotValidException
 				|| ex instanceof ConstraintViolationException) {
-			message = "Data input error";
+			message = messageSource.getMessage("error.validation.signIn.data", null, LocaleContextHolder.getLocale());
 		} else {
-			message = "An error has occurred";
+			message = messageSource.getMessage("error.validation.signIn.common", null, LocaleContextHolder.getLocale());
 		}
 
 		String refererUri = request.getHeader(HttpHeaders.REFERER).replaceFirst(request.getHeader(HttpHeaders.ORIGIN), "");
