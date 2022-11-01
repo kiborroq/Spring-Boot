@@ -20,7 +20,6 @@
 </head>
 <style>
     body {
-        height: 90vh;
         font-family: Verdana, sans-serif;
     }
     .container {
@@ -243,12 +242,10 @@
       </table>
     </div>
   </div>
-</div>
-</body>
-<footer>
-  <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-top: 25px; margin-bottom: 25px">
+  <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-top: 50px;">
     <a href="/profile?lang=en" style="margin-right: 15px"> <@spring.message "lang.en"/></a>
     <a href="/profile?lang=ru"> <@spring.message "lang.ru"/></a>
   </div>
-</footer>
+</div>
+</body>
 </html>
